@@ -1,0 +1,471 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "Buildings": {
+                "operations": {
+                    "CustomFields_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Buildings/{school_district}"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "FieldName",
+                "resources": {
+                    "SchoolDistrict": "string*",
+                    "Name":  "string*",
+                    "Address":  "string*",
+                    "City":  "string*",
+                    "State":  "string*",
+                    "ZipCode":  "string*",
+                    "PhoneNumber":  "string*",
+                    "FaxNumber":  "string*",
+                    "IsPrimary":  "boolean*"
+                }
+            },
+            "CustomFields": {
+                "operations": {
+                    "CustomFields_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/CustomFields/{school_district}"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "FieldName",
+                "resources": {
+                    "SchoolDistrict": "string*",
+                    "FieldName":  "string*",
+                    "AccountType":  "string*",
+                    "IsUnique":  "boolean*"
+                }
+            },
+            "Departments": {
+                "operations": {
+                    "Departments_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Departments"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {"id": ["string*"]}
+            },
+            "Educators": {
+                "operations": {
+                    "Educators_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Educators"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "FirstName": "string*",
+                    "MiddleInitial": "string*",
+                    "LastName": "string*",
+                    "DisplayName": "string*",
+                    "Department": "string*",
+                    "Title": "string*",
+                    "SchoolDistrict": "string*",
+                    "BuildingName": "string*",
+                    "SchoolAddress": "string",
+                    "SchoolCity": "string",
+                    "SchoolState": "string",
+                    "SchoolZipCode": "string",
+                    "PhoneNumber": "string",
+                    "FaxNumber": "string",
+                    "PrimaryEmailAddress": "string*",
+                    "AccountExists": "string*",
+                    "AccountEnabled": "boolean",
+                    "InRemovalQueue": "boolean",
+                    "UpdateAccountInformation": "boolean",
+                    "Password": "string*",
+                    "AccountLocked": "boolean",
+                    "CustomFields": {
+                        "Employee ID": "string"
+                    },
+                    "PendingActions": [
+                      {
+                        "Name": "_:string*",
+                        "Description": "_:string*"
+                      }
+                    ],
+                    "GroupMemberships": ["string"],
+                    "OutlookAnywhereAccessEnabled": "boolean",
+                    "WebmailAccessEnabled": "boolean",
+                    "KnowledgeWorkerAssigned": "boolean",
+                    "GSuiteOrganizationName": "string*",
+                    "GSuiteOrganizationPath": "string*"
+                  }
+            },
+            "GradYear": {
+                "operations": {
+                    "GradYear_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/GradYear"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Year",
+                "resources": {
+                    "Year": "string*",
+                    "GradeLevel":  "string*"
+                }
+            },
+            "Groups": {
+                "operations": {
+                    "Groups_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Groups"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Name",
+                "resources": {
+                    "Name": "string*",
+                    "Prefix": "string*",
+                    "Description": "string*",
+                    "ShowInGal": "boolean",
+                    "GroupManager": "string*",
+                    "CreateAsSecurityGroup": "boolean",
+                    "MailEnabled": "boolean",
+                    "SendRestrictions": ["string"]
+                }
+            },
+            "GSuite_Organizations": {
+                "operations": {
+                    "GSuite_Organizations_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/GSuite/Organizations"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Name",
+                "resources": {
+                    "Name": "string*",
+                    "Path": "string*"
+                }
+            },
+            "MicrosoftClassroom_AvailableEducators": {
+                "operations": {
+                    "MicrosoftClassroom_AvailableEducators_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/AvailableEducators"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SchoolDistrict": "string*",
+                    "PrimaryEmailAddress": "string*"
+                }
+            },
+            "MicrosoftClassroom_AvailableStudents": {
+                "operations": {
+                    "MicrosoftClassroom_AvailableStudents_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/AvailableStudents"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SchoolDistrict": "string*",
+                    "PrimaryEmailAddress": "string*"
+                }
+            },
+            "MicrosoftClassroom_Schools": {
+                "operations": {
+                    "MicrosoftClassroom_Schools_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/Schools"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "SisId",
+                "resources": {
+                    "SisId": "string*",
+                    "SchoolDistrict": "string*",
+                    "Name": "string*"
+                }
+            },
+            "MicrosoftClassroom_Sections": {
+                "operations": {
+                    "MicrosoftClassroom_Sections_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/Sections"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "SisId",
+                "resources": {
+                    "SchoolSisId": "string*",
+                    "SisId": "string*",
+                    "Name": "string*"
+                }
+            },
+            "MicrosoftClassroom_Students": {
+                "operations": {
+                    "MicrosoftClassroom_Students_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/Students"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SisId": "string*",
+                    "SchoolSisId": "string*"
+                }
+            },
+            "MicrosoftClassroom_Teachers": {
+                "operations": {
+                    "MicrosoftClassroom_Teachers_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/Teachers"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SisId": "string*",
+                    "SchoolSisId": "string*"
+                }
+            },
+            "MicrosoftClassroom_TeacherRoster": {
+                "operations": {
+                    "MicrosoftClassroom_TeacherRoster_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/TeacherRoster"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SectionSisId": "string*"
+                }
+            },
+            "MicrosoftClassroom_StudentEnrollment": {
+                "operations": {
+                    "MicrosoftClassroom_StudentEnrollment_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/MicrosoftClassroom/StudentEnrollment"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "SectionSisId": "string*"
+                }
+            },
+            "Students": {
+                "operations": {
+                    "Students_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Students"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "FirstName": "string*",
+                    "MiddleInitial": "string*",
+                    "LastName": "string*",
+                    "DisplayName": "string*",
+                    "GradYear": "string*",
+                    "SchoolDistrict": "string*",
+                    "BuildingName": "string*",
+                    "PrimaryEmailAddress": "string*",
+                    "AccountExists": "string*",
+                    "AccountEnabled": "boolean",
+                    "InRemovalQueue": "boolean",
+                    "UpdateAccountInformation": "boolean",
+                    "Password": "string*",
+                    "AccountLocked": "boolean",
+                    "CustomFields": {
+                        "Student ID": "string"
+                    },
+                    "PendingActions": [
+                      {
+                        "Name": "_:string*",
+                        "Description": "_:string*"
+                      }
+                    ],
+                    "GroupMemberships": ["string"],
+                    "OutlookAnywhereAccessEnabled": "boolean",
+                    "WebmailAccessEnabled": "boolean",
+                    "GSuiteOrganizationName": "string*",
+                    "GSuiteOrganizationPath": "string*"
+                  }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "{tenant_id}",
+            "get": {
+                "query_parameters": {
+                }
+            },
+            "authentication": "basic_auth",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "/api/Departments"
+            },
+            "accept": "application/json"
+        }
+        
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "tenant_id",
+                "type": "textbox",
+                "label": "Tenent URL:",
+                "value": "https://membersapi.k12.sd.us"
+            },
+            {
+                "name": "school_district",
+                "type": "textbox",
+                "label": "School District:",
+                "value": ""
+            }
+        ]
+    }
+}
