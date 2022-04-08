@@ -1,0 +1,1241 @@
+{
+  "system_name": "MembersAPI",
+  "system_type_category": "rest",
+  "system_type_name": "MembersAPI",
+  "name_values": [
+    {
+      "name": "collections",
+      "value": [
+        "Buildings",
+        "CustomFields",
+        "Educators",
+        "Educators_PendingActions",
+        "GradYear",
+        "Groups",
+        "GSuite_Organizations",
+        "MicrosoftClassroom_AvailableEducators",
+        "MicrosoftClassroom_AvailableStudents",
+        "MicrosoftClassroom_Schools",
+        "MicrosoftClassroom_Sections",
+        "MicrosoftClassroom_Students",
+        "MicrosoftClassroom_Teachers",
+        "MicrosoftClassroom_TeacherRoster",
+        "MicrosoftClassroom_StudentEnrollment",
+        "Students",
+        "Students_PendingActions"
+      ]
+    },
+    {
+      "name": "password",
+      "value": null
+    },
+    {
+      "name": "proxy_address",
+      "value": null
+    },
+    {
+      "name": "proxy_password",
+      "value": null
+    },
+    {
+      "name": "proxy_use_flag",
+      "value": null
+    },
+    {
+      "name": "proxy_use_username_password_flag",
+      "value": null
+    },
+    {
+      "name": "proxy_username",
+      "value": null
+    },
+    {
+      "name": "school_district",
+      "value": null
+    },
+    {
+      "name": "tenant_id",
+      "value": null
+    },
+    {
+      "name": "user_name",
+      "value": null
+    }
+  ],
+  "collections": [
+    {
+      "col_name": "Buildings",
+      "fields": [
+        {
+          "field_name": "FieldName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Name",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Address",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "City",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "State",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "ZipCode",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PhoneNumber",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "FaxNumber",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "IsPrimary",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "SchoolDistrict",
+            "Name",
+            "Address",
+            "City",
+            "State",
+            "ZipCode",
+            "PhoneNumber",
+            "FaxNumber",
+            "IsPrimary"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "CustomFields",
+      "fields": [
+        {
+          "field_name": "FieldName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountType",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "IsUnique",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "FieldName",
+      "display": "FieldName",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "SchoolDistrict",
+            "FieldName",
+            "AccountType",
+            "IsUnique"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "Educators",
+      "fields": [
+        {
+          "field_name": "Username",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": [
+            "Educators_PendingActions",
+            "MicrosoftClassroom_AvailableEducators"
+          ]
+        },
+        {
+          "field_name": "FirstName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "MiddleInitial",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "LastName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "DisplayName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Department",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Title",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "BuildingName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolAddress",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolCity",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolState",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolZipCode",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PhoneNumber",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "FaxNumber",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PrimaryEmailAddress",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountExists",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "InRemovalQueue",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "UpdateAccountInformation",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Password",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountLocked",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Employee ID",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GroupMemberships",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "OutlookAnywhereAccessEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "WebmailAccessEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "KnowledgeWorkerAssigned",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GSuiteOrganizationName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GSuiteOrganizationPath",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PendingActions",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Username",
+      "display": "Username",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "FirstName",
+            "MiddleInitial",
+            "LastName",
+            "DisplayName",
+            "Department",
+            "Title",
+            "SchoolDistrict",
+            "BuildingName",
+            "SchoolAddress",
+            "SchoolCity",
+            "SchoolState",
+            "SchoolZipCode",
+            "PhoneNumber",
+            "FaxNumber",
+            "PrimaryEmailAddress",
+            "AccountExists",
+            "AccountEnabled",
+            "InRemovalQueue",
+            "UpdateAccountInformation",
+            "Password",
+            "AccountLocked",
+            "Employee ID",
+            "GroupMemberships",
+            "OutlookAnywhereAccessEnabled",
+            "WebmailAccessEnabled",
+            "KnowledgeWorkerAssigned",
+            "GSuiteOrganizationName",
+            "GSuiteOrganizationPath"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "Educators_PendingActions",
+      "fields": [
+        {
+          "field_name": "Educators_Username",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "_Name",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "_Description",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Educators_Username",
+      "display": "_Name",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "_Name",
+            "_Description"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "GradYear",
+      "fields": [
+        {
+          "field_name": "Year",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GradeLevel",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Year",
+      "display": "Year",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Year",
+            "GradeLevel"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "Groups",
+      "fields": [
+        {
+          "field_name": "Name",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Prefix",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Description",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "ShowInGal",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GroupManager",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "CreateAsSecurityGroup",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "MailEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SendRestrictions",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Name",
+      "display": "Name",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Name",
+            "Prefix",
+            "Description",
+            "ShowInGal",
+            "GroupManager",
+            "CreateAsSecurityGroup",
+            "MailEnabled",
+            "SendRestrictions"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "GSuite_Organizations",
+      "fields": [
+        {
+          "field_name": "Name",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Path",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Name",
+      "display": "Path",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Name",
+            "Path"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_AvailableEducators",
+      "fields": [
+        {
+          "field_name": "Username",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PrimaryEmailAddress",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Username",
+      "display": "Username",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SchoolDistrict",
+            "PrimaryEmailAddress"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_AvailableStudents",
+      "fields": [
+        {
+          "field_name": "Username",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PrimaryEmailAddress",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Username",
+      "display": "Username",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SchoolDistrict",
+            "PrimaryEmailAddress"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_Schools",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "SisId",
+            "SchoolDistrict",
+            "Name"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_Sections",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "SchoolSisId",
+            "SisId",
+            "Name"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_Students",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SisId",
+            "SchoolSisId"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_Teachers",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SisId",
+            "SchoolSisId"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_TeacherRoster",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SectionSisId"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "MicrosoftClassroom_StudentEnrollment",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "SectionSisId"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    },
+    {
+      "col_name": "Students",
+      "fields": [
+        {
+          "field_name": "Username",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": [
+            "MicrosoftClassroom_AvailableStudents"
+          ]
+        },
+        {
+          "field_name": "FirstName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "MiddleInitial",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "LastName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "DisplayName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GradYear",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": [
+            "GradYear"
+          ]
+        },
+        {
+          "field_name": "SchoolDistrict",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "BuildingName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PrimaryEmailAddress",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountExists",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "InRemovalQueue",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "UpdateAccountInformation",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Password",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "AccountLocked",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Employee ID",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GroupMemberships",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "OutlookAnywhereAccessEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "WebmailAccessEnabled",
+          "field_type": "boolean",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GSuiteOrganizationName",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "GSuiteOrganizationPath",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "PendingActions",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        },
+        {
+          "field_name": "Student ID",
+          "field_type": "string",
+          "include": true,
+          "field_format": "",
+          "field_source": "data",
+          "javascript": "",
+          "ref_col": []
+        }
+      ],
+      "key": "Username",
+      "display": "Username",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "Username",
+            "FirstName",
+            "MiddleInitial",
+            "LastName",
+            "DisplayName",
+            "GradYear",
+            "SchoolDistrict",
+            "BuildingName",
+            "PrimaryEmailAddress",
+            "AccountExists",
+            "AccountEnabled",
+            "InRemovalQueue",
+            "UpdateAccountInformation",
+            "Password",
+            "AccountLocked",
+            "Student ID",
+            "GroupMemberships",
+            "OutlookAnywhereAccessEnabled",
+            "WebmailAccessEnabled",
+            "GSuiteOrganizationName",
+            "GSuiteOrganizationPath"
+          ]
+        }
+      ],
+      "sys_nn": [
+        {
+          "field_a": "Username",
+          "col_a": "MicrosoftClassroom_AvailableStudents",
+          "field_b": "GradYear",
+          "col_b": "GradYear"
+        }
+      ],
+      "source": "data"
+    },
+    {
+      "col_name": "Students_PendingActions",
+      "fields": [],
+      "key": "",
+      "display": "",
+      "name_values": [
+        {
+          "name": "properties",
+          "value": [
+            "_Name",
+            "_Description"
+          ]
+        }
+      ],
+      "sys_nn": [],
+      "source": "data"
+    }
+  ],
+  "call_id": 173,
+  "auth": true
+}
