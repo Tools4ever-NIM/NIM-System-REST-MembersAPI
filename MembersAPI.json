@@ -4,7 +4,7 @@
         "crud_objects": {
             "Buildings": {
                 "operations": {
-                    "CustomFieldsList": {
+                    "CustomFields_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/Buildings/{school_district}"
@@ -33,7 +33,7 @@
             },
             "CustomFields": {
                 "operations": {
-                    "CustomFieldsList": {
+                    "CustomFields_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/CustomFields/{school_district}"
@@ -57,14 +57,13 @@
             },
             "Departments": {
                 "operations": {
-                    "DepartmentsList": {
+                    "Departments_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/Departments"
                         },
                         "processing_options": {
-                            "output_field": null,
-                            "stringArrayColumnName": "name"
+                            "output_field": null
                         },
                         "query_parameters": {
                             
@@ -72,14 +71,12 @@
                     }
                 },
                 "parameters": {},
-                "key": "name",
-                "resources": {
-                    "name": "string*"
-                }
+                "key": "id",
+                "resources": {"id": ["string*"]}
             },
             "Educators": {
                 "operations": {
-                    "EducatorsList": {
+                    "Educators_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/Educators"
@@ -117,9 +114,60 @@
                     "UpdateAccountInformation": "boolean",
                     "Password": "string*",
                     "AccountLocked": "boolean",
-                    "CustomFields": {
-                        "Employee ID": "string"
-                    },
+                    "PendingActions": [
+                      {
+                        "Name": "_:string*",
+                        "Description": "_:string*"
+                      }
+                    ],
+                    "GroupMemberships": ["string"],
+                    "OutlookAnywhereAccessEnabled": "boolean",
+                    "WebmailAccessEnabled": "boolean",
+                    "KnowledgeWorkerAssigned": "boolean",
+                    "GSuiteOrganizationName": "string*",
+                    "GSuiteOrganizationPath": "string*"
+                  }
+            },
+            "Educators_Pending": {
+                "operations": {
+                    "EducatorsPending_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "/api/Educators"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            "Pending": "true"
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "Username",
+                "resources": {
+                    "Username": "string*",
+                    "FirstName": "string*",
+                    "MiddleInitial": "string*",
+                    "LastName": "string*",
+                    "DisplayName": "string*",
+                    "Department": "string*",
+                    "Title": "string*",
+                    "SchoolDistrict": "string*",
+                    "BuildingName": "string*",
+                    "SchoolAddress": "string",
+                    "SchoolCity": "string",
+                    "SchoolState": "string",
+                    "SchoolZipCode": "string",
+                    "PhoneNumber": "string",
+                    "FaxNumber": "string",
+                    "PrimaryEmailAddress": "string*",
+                    "AccountExists": "string*",
+                    "AccountEnabled": "boolean",
+                    "InRemovalQueue": "boolean",
+                    "UpdateAccountInformation": "boolean",
+                    "Password": "string*",
+                    "AccountLocked": "boolean",
                     "PendingActions": [
                       {
                         "Name": "_:string*",
@@ -136,7 +184,7 @@
             },
             "GradYear": {
                 "operations": {
-                    "GradYearList": {
+                    "GradYear_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/GradYear"
@@ -158,7 +206,7 @@
             },
             "Groups": {
                 "operations": {
-                    "GroupsList": {
+                    "Groups_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/Groups"
@@ -184,31 +232,9 @@
                     "SendRestrictions": ["string"]
                 }
             },
-            "GroupPrefix": {
-                "operations": {
-                    "GroupPrefixList": {
-                        "method": "get",
-                        "call": {
-                            "mode": "normal",
-                            "path": "/api/GroupPrefix/{school_district}"
-                        },
-                        "processing_options": {
-                            "output_field": null
-                        },
-                        "query_parameters": {
-                                
-                        }
-                    }
-                },
-                "parameters": {},
-                "key": "Prefix",
-                "resources": {
-                    "Prefix": "string*"
-                }
-            },
             "GSuite_Organizations": {
                 "operations": {
-                    "GSuite_OrganizationsList": {
+                    "GSuite_Organizations_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/GSuite/Organizations"
@@ -230,7 +256,7 @@
             },
             "MicrosoftClassroom_AvailableEducators": {
                 "operations": {
-                    "MicrosoftClassroom_AvailableEducatorsList": {
+                    "MicrosoftClassroom_AvailableEducators_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/AvailableEducators"
@@ -253,7 +279,7 @@
             },
             "MicrosoftClassroom_AvailableStudents": {
                 "operations": {
-                    "MicrosoftClassroom_AvailableStudentsList": {
+                    "MicrosoftClassroom_AvailableStudents_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/AvailableStudents"
@@ -276,7 +302,7 @@
             },
             "MicrosoftClassroom_Schools": {
                 "operations": {
-                    "MicrosoftClassroom_SchoolsList": {
+                    "MicrosoftClassroom_Schools_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Schools"
@@ -299,7 +325,7 @@
             },
             "MicrosoftClassroom_Sections": {
                 "operations": {
-                    "MicrosoftClassroom_SectionsList": {
+                    "MicrosoftClassroom_Sections_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Sections"
@@ -322,7 +348,7 @@
             },
             "MicrosoftClassroom_Students": {
                 "operations": {
-                    "MicrosoftClassroom_StudentsList": {
+                    "MicrosoftClassroom_Students_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Students"
@@ -345,7 +371,7 @@
             },
             "MicrosoftClassroom_Teachers": {
                 "operations": {
-                    "MicrosoftClassroom_TeachersList": {
+                    "MicrosoftClassroom_Teachers_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Teachers"
@@ -368,7 +394,7 @@
             },
             "MicrosoftClassroom_TeacherRoster": {
                 "operations": {
-                    "MicrosoftClassroom_TeacherRosterList": {
+                    "MicrosoftClassroom_TeacherRoster_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/TeacherRoster"
@@ -390,7 +416,7 @@
             },
             "MicrosoftClassroom_StudentEnrollment": {
                 "operations": {
-                    "MicrosoftClassroom_StudentEnrollmentList": {
+                    "MicrosoftClassroom_StudentEnrollment_get": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/StudentEnrollment"
@@ -423,6 +449,37 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "StudentsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Students"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "Username",
+                            "DisplayName",
+                            "PrimaryEmailAddress",
+                            "AccountExists",
+                            "AccountEnabled",
+                            "InRemovalQueue",
+                            "UpdateAccountInformation",
+                            "AccountLocked",
+                            "PendingActions",
+                            "GroupMemberships",
+                            "OutlookAnywhereAccessEnabled",
+                            "WebmailAccessEnabled",
+                            "GSuiteOrganizationName",
+                            "GSuiteOrganizationPath"
+                        ],
+                        "resource_mandatory": [
+                            "FirstName",
+                            "LastName",
+                            "GradYear",
+                            "SchoolDistrict"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -443,9 +500,6 @@
                     "UpdateAccountInformation": "boolean",
                     "Password": "string*",
                     "AccountLocked": "boolean",
-                    "CustomFields": {
-                        "Student ID": "string"
-                    },
                     "PendingActions": [
                       {
                         "Name": "_:string*",
@@ -459,27 +513,51 @@
                     "GSuiteOrganizationPath": "string*"
                   }
             },
-            "Titles": {
+            "Students_Pending": {
                 "operations": {
-                    "DepartmentsList": {
+                    "StudentsPendingList": {
                         "method": "get",
                         "call": {
-                            "path": "/api/Titles"
+                            "path": "/api/Students"
                         },
                         "processing_options": {
-                            "output_field": null,
-                            "stringArrayColumnName": "name"
+                            "output_field": null
                         },
                         "query_parameters": {
-                            
+                            "Pending": "true"
                         }
                     }
                 },
                 "parameters": {},
-                "key": "name",
+                "key": "Username",
                 "resources": {
-                    "name": "string*"
-                }
+                    "Username": "string*",
+                    "FirstName": "string*",
+                    "MiddleInitial": "string*",
+                    "LastName": "string*",
+                    "DisplayName": "string*",
+                    "GradYear": "string*",
+                    "SchoolDistrict": "string*",
+                    "BuildingName": "string*",
+                    "PrimaryEmailAddress": "string*",
+                    "AccountExists": "string*",
+                    "AccountEnabled": "boolean",
+                    "InRemovalQueue": "boolean",
+                    "UpdateAccountInformation": "boolean",
+                    "Password": "string*",
+                    "AccountLocked": "boolean",
+                    "PendingActions": [
+                      {
+                        "Name": "_:string*",
+                        "Description": "_:string*"
+                      }
+                    ],
+                    "GroupMemberships": ["string"],
+                    "OutlookAnywhereAccessEnabled": "boolean",
+                    "WebmailAccessEnabled": "boolean",
+                    "GSuiteOrganizationName": "string*",
+                    "GSuiteOrganizationPath": "string*"
+                  }
             }
         }
     },
