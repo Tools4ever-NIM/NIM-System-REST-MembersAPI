@@ -229,6 +229,48 @@
                                 
                         },
                         "maxSessionCount": 20
+                    },
+                    "Educators_GroupsAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{Group}/members"
+                        },
+                        "query_parameters": {
+                            "action": "Add"
+                        },
+                        "body":{
+                            "Users": [ "{Username}" ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "Group"
+                        ]
+                    },
+                    "Educators_GroupsRemove": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{Group}/members"
+                        },
+                        "query_parameters": {
+                            "action": "REmove"
+                        },
+                        "body":{
+                            "Users": [ "{Username}" ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "Group"
+                        ]
                     }
                 },
                 "parameters":{},
@@ -465,6 +507,51 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_SchoolsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Schools"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId",
+                            "SchoolDistrict",
+                            "Name"
+                        ]
+                    },
+                    "MicrosoftClassroom_SchoolsUpdate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Schools/{SisId}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId",
+                            "Name"
+                        ]
+                    },
+                    "MicrosoftClassroom_SchoolsDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Schools/{SisId}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -488,6 +575,51 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_SectionsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Sections"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId",
+                            "SchoolSisId",
+                            "Name"
+                        ]
+                    },
+                    "MicrosoftClassroom_SectionsUpdate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Sections/{SisId}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId",
+                            "Name"
+                        ]
+                    },
+                    "MicrosoftClassroom_SectionsDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Sections/{SisId}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SisId"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -511,6 +643,36 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_StudentsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Students"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SchoolSisId",
+                            "SisId"
+                        ]
+                    },
+                    "MicrosoftClassroom_StudentsDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Students/{Username}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -534,6 +696,36 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_TeachersCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Teachers"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SchoolSisId",
+                            "SisId"
+                        ]
+                    },
+                    "MicrosoftClassroom_TeachersDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/Teachers/{Username}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -557,6 +749,36 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_TeacherRosterCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/TeacherRoster"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SectionSisId"
+                        ]
+                    },
+                    "MicrosoftClassroom_TeacherRosterDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/TeacherRoster/{Username}/{SectionSisId}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SectionSisId"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -579,6 +801,36 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "MicrosoftClassroom_StudentEnrollmentCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/StudentEnrollment"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SectionSisId"
+                        ]
+                    },
+                    "MicrosoftClassroom_StudentEnrollmentDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/MicrosoftClassroom/StudentEnrollment/{Username}/{SectionSisId}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "SectionSisId"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -719,10 +971,50 @@
                                 
                         },
                         "maxSessionCount": 20
+                    },
+                    "Students_GroupsAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{Group}/members"
+                        },
+                        "query_parameters": {
+                            "action": "Add"
+                        },
+                        "body":{
+                            "Users": [ "{Username}" ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "Group"
+                        ]
+                    },
+                    "Students_GroupsRemove": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{Group}/members"
+                        },
+                        "query_parameters": {
+                            "action": "REmove"
+                        },
+                        "body":{
+                            "Users": [ "{Username}" ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Username",
+                            "Group"
+                        ]
                     }
                 },
-                "parameters":{},
-                "key":"Username",
                 "resources":{
                     "Username": "string*",
                     "Group": "string*"
