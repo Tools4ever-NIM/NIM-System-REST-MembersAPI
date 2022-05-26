@@ -4,7 +4,7 @@
         "crud_objects": {
             "Buildings": {
                 "operations": {
-                    "CustomFields_get": {
+                    "CustomFieldsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/Buildings/{school_district}"
@@ -18,7 +18,7 @@
                     }
                 },
                 "parameters": {},
-                "key": "FieldName",
+                "key": "Name",
                 "resources": {
                     "SchoolDistrict": "string*",
                     "Name":  "string*",
@@ -33,7 +33,7 @@
             },
             "CustomFields": {
                 "operations": {
-                    "CustomFields_get": {
+                    "CustomFieldsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/CustomFields/{school_district}"
@@ -57,13 +57,14 @@
             },
             "Departments": {
                 "operations": {
-                    "Departments_get": {
+                    "DepartmentsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/Departments"
                         },
                         "processing_options": {
-                            "output_field": null
+                            "output_field": null,
+                            "stringArrayColumnName": "id"
                         },
                         "query_parameters": {
                             
@@ -72,14 +73,17 @@
                 },
                 "parameters": {},
                 "key": "id",
-                "resources": {"id": ["string*"]}
+                "resources": {
+                    "id": "string*"
+                }
             },
             "Educators": {
                 "operations": {
-                    "Educators_get": {
+                    "EducatorsList": {
                         "method": "get",
                         "call": {
-                            "path": "/api/Educators"
+                            "path": "/api/Educators",
+                            "post_processing": "child_tables"
                         },
                         "processing_options": {
                             "output_field": null
@@ -87,6 +91,81 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "EducatorsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Educators"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "Username",
+                            "DisplayName",
+                            "PrimaryEmailAddress",
+                            "AccountExists",
+                            "AccountEnabled",
+                            "InRemovalQueue",
+                            "UpdateAccountInformation",
+                            "AccountLocked",
+                            "PendingActions",
+                            "GroupMemberships",
+                            "OutlookAnywhereAccessEnabled",
+                            "WebmailAccessEnabled",
+                            "GSuiteOrganizationName",
+                            "GSuiteOrganizationPath",
+                            "KnowledgeWorkerAssigned",
+                            "SchoolAddress",
+                            "SchoolCity",
+                            "SchoolState",
+                            "SchoolZipCode"
+
+                        ],
+                        "resource_mandatory": [
+                            "FirstName",
+                            "LastName",
+                            "Department",
+                            "Title",
+                            "SchoolDistrict",
+                            "BuildingName"
+                        ]
+                    },
+                    "EducatorsUpdate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Educators/{Username}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "DisplayName",
+                            "PrimaryEmailAddress",
+                            "AccountExists",
+                            "AccountLocked",
+                            "PendingActions",
+                            "GroupMemberships",
+                            "SchoolAddress",
+                            "SchoolCity",
+                            "SchoolState",
+                            "SchoolZipCode"
+                        ],
+                        "resource_mandatory": [
+                            "Username"
+                        ]
+                    },
+                    "EducatorsDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Educators/{Username}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "Username"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -125,12 +204,43 @@
                     "WebmailAccessEnabled": "boolean",
                     "KnowledgeWorkerAssigned": "boolean",
                     "GSuiteOrganizationName": "string*",
-                    "GSuiteOrganizationPath": "string*"
+                    "GSuiteOrganizationPath": "string*",
+                    "CreateWebsite": "boolean*"
                   }
+            },
+            "Educators_Groups":{
+                "operations":{
+                    "Educators_GroupsList":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "Educators",
+                            "iterator": "Username",
+                            "path": "/api/Educators/{iterator}/Groups",
+                            "base": {
+                                "Username": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null,
+                            "stringArrayColumnName": "Group"
+                        },
+                        "query_parameters": {
+                                
+                        },
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters":{},
+                "key":"Username",
+                "resources":{
+                    "Username": "string*",
+                    "Group": "string*"
+                }
             },
             "Educators_Pending": {
                 "operations": {
-                    "EducatorsPending_get": {
+                    "EducatorsPendingList": {
                         "method": "get",
                         "call": {
                             "path": "/api/Educators"
@@ -168,12 +278,6 @@
                     "UpdateAccountInformation": "boolean",
                     "Password": "string*",
                     "AccountLocked": "boolean",
-                    "PendingActions": [
-                      {
-                        "Name": "_:string*",
-                        "Description": "_:string*"
-                      }
-                    ],
                     "GroupMemberships": ["string"],
                     "OutlookAnywhereAccessEnabled": "boolean",
                     "WebmailAccessEnabled": "boolean",
@@ -184,7 +288,7 @@
             },
             "GradYear": {
                 "operations": {
-                    "GradYear_get": {
+                    "GradYearList": {
                         "method": "get",
                         "call": {
                             "path": "/api/GradYear"
@@ -206,7 +310,7 @@
             },
             "Groups": {
                 "operations": {
-                    "Groups_get": {
+                    "GroupsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/Groups"
@@ -217,6 +321,54 @@
                         "query_parameters": {
                             
                         }
+                    },
+                    "GroupsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Groups"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Name"
+                        ]
+                    },
+                    "GroupsUpdate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Groups/UpdateGroup"
+                        },
+                        "query_parameters": {
+                            "id" : "{Name}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Name"
+                        ]
+                    },
+                    "GroupsDelete": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Groups/DeleteGroup"
+                        },
+                        "query_parameters": {
+                            "id" : "{Name}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "Name"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -234,7 +386,7 @@
             },
             "GSuite_Organizations": {
                 "operations": {
-                    "GSuite_Organizations_get": {
+                    "GSuite_OrganizationsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/GSuite/Organizations"
@@ -256,7 +408,7 @@
             },
             "MicrosoftClassroom_AvailableEducators": {
                 "operations": {
-                    "MicrosoftClassroom_AvailableEducators_get": {
+                    "MicrosoftClassroom_AvailableEducatorsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/AvailableEducators"
@@ -279,7 +431,7 @@
             },
             "MicrosoftClassroom_AvailableStudents": {
                 "operations": {
-                    "MicrosoftClassroom_AvailableStudents_get": {
+                    "MicrosoftClassroom_AvailableStudentsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/AvailableStudents"
@@ -302,7 +454,7 @@
             },
             "MicrosoftClassroom_Schools": {
                 "operations": {
-                    "MicrosoftClassroom_Schools_get": {
+                    "MicrosoftClassroom_SchoolsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Schools"
@@ -325,7 +477,7 @@
             },
             "MicrosoftClassroom_Sections": {
                 "operations": {
-                    "MicrosoftClassroom_Sections_get": {
+                    "MicrosoftClassroom_SectionsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Sections"
@@ -348,7 +500,7 @@
             },
             "MicrosoftClassroom_Students": {
                 "operations": {
-                    "MicrosoftClassroom_Students_get": {
+                    "MicrosoftClassroom_StudentsList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Students"
@@ -371,7 +523,7 @@
             },
             "MicrosoftClassroom_Teachers": {
                 "operations": {
-                    "MicrosoftClassroom_Teachers_get": {
+                    "MicrosoftClassroom_TeachersList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/Teachers"
@@ -394,7 +546,7 @@
             },
             "MicrosoftClassroom_TeacherRoster": {
                 "operations": {
-                    "MicrosoftClassroom_TeacherRoster_get": {
+                    "MicrosoftClassroom_TeacherRosterList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/TeacherRoster"
@@ -416,7 +568,7 @@
             },
             "MicrosoftClassroom_StudentEnrollment": {
                 "operations": {
-                    "MicrosoftClassroom_StudentEnrollment_get": {
+                    "MicrosoftClassroom_StudentEnrollmentList": {
                         "method": "get",
                         "call": {
                             "path": "/api/MicrosoftClassroom/StudentEnrollment"
@@ -441,7 +593,8 @@
                     "StudentsList": {
                         "method": "get",
                         "call": {
-                            "path": "/api/Students"
+                            "path": "/api/Students",
+                            "post_processing": "child_tables"
                         },
                         "processing_options": {
                             "output_field": null
@@ -472,13 +625,45 @@
                             "OutlookAnywhereAccessEnabled",
                             "WebmailAccessEnabled",
                             "GSuiteOrganizationName",
-                            "GSuiteOrganizationPath"
+                            "GSuiteOrganizationPath",
+                            "KnowledgeWorkerAssigned"
                         ],
                         "resource_mandatory": [
                             "FirstName",
                             "LastName",
                             "GradYear",
                             "SchoolDistrict"
+                        ]
+                    },
+                    "StudentsUpdate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Students/{Username}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "DisplayName",
+                            "PrimaryEmailAddress",
+                            "AccountLocked",
+                            "PendingActions",
+                            "GroupMemberships"
+                        ],
+                        "resource_mandatory": [
+                            "Username"
+                        ]
+                    },
+                    "StudentsDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Students/{Username}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "Username"
                         ]
                     }
                 },
@@ -513,6 +698,36 @@
                     "GSuiteOrganizationPath": "string*"
                   }
             },
+            "Students_Groups":{
+                "operations":{
+                    "Students_GroupsList":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "Students",
+                            "iterator": "Username",
+                            "path": "/api/Students/{iterator}/Groups",
+                            "base": {
+                                "Username": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null,
+                            "stringArrayColumnName": "Group"
+                        },
+                        "query_parameters": {
+                                
+                        },
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters":{},
+                "key":"Username",
+                "resources":{
+                    "Username": "string*",
+                    "Group": "string*"
+                }
+            },
             "Students_Pending": {
                 "operations": {
                     "StudentsPendingList": {
@@ -546,18 +761,33 @@
                     "UpdateAccountInformation": "boolean",
                     "Password": "string*",
                     "AccountLocked": "boolean",
-                    "PendingActions": [
-                      {
-                        "Name": "_:string*",
-                        "Description": "_:string*"
-                      }
-                    ],
                     "GroupMemberships": ["string"],
                     "OutlookAnywhereAccessEnabled": "boolean",
                     "WebmailAccessEnabled": "boolean",
                     "GSuiteOrganizationName": "string*",
                     "GSuiteOrganizationPath": "string*"
                   }
+            },
+            "Titles": {
+                "operations": {
+                    "TitlesList": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/Titles"
+                        },
+                        "processing_options": {
+                            "output_field": null,
+                            "stringArrayColumnName": "id"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*"
+                }
             }
         }
     },
