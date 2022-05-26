@@ -273,6 +273,18 @@
                         ]
                     }
                 },
+                "groupmembership": {
+                    "add_operation": "Educators_GroupsAdd",
+                    "remove_operation": "Educators_GroupsRemove",
+                    "member_table": "Educators",
+                    "group_table": "Groups",
+                    "member_attributes": {
+                        "Username": "Username"
+                    },
+                    "group_attributes": {
+                        "Name": "Group"
+                    }
+                },
                 "parameters":{},
                 "key":"Username",
                 "resources":{
@@ -1013,6 +1025,18 @@
                             "Username",
                             "Group"
                         ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "Students_GroupsAdd",
+                    "remove_operation": "Students_GroupsRemove",
+                    "member_table": "Students",
+                    "group_table": "Groups",
+                    "member_attributes": {
+                        "Username": "Username"
+                    },
+                    "group_attributes": {
+                        "Name": "Group"
                     }
                 },
                 "resources":{
