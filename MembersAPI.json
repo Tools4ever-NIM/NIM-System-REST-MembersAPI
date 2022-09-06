@@ -152,6 +152,9 @@
                             "mode": "normal",
                             "path": "/api/Educators/{Username}"
                         },
+                        "body": {
+                            "UpdateAccountInformation": true
+                        },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -903,6 +906,10 @@
                             "mode": "normal",
                             "path": "/api/Students"
                         },
+                        "processing_options": {
+                            "output_field": null,
+                            "stringArrayColumnName": "Username"
+                        },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -957,6 +964,9 @@
                             "mode": "normal",
                             "path": "/api/Students/{Username}"
                         },
+                        "body": {
+                            "UpdateAccountInformation": true
+                       },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
