@@ -98,6 +98,9 @@
                             "mode": "normal",
                             "path": "/api/Educators"
                         },
+                        "processing_options": {
+                            "stringColumnName": "Username"
+                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -907,9 +910,8 @@
                             "path": "/api/Students"
                         },
                         "processing_options": {
-                            "output_field": null,
-                            "stringArrayColumnName": "Username"
-                        },
+                            "stringColumnName": "Username"
+                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -1097,7 +1099,7 @@
                             "path": "/groups/{Group}/members"
                         },
                         "query_parameters": {
-                            "action": "REmove"
+                            "action": "remove"
                         },
                         "body":{
                             "Users": [ "{Username}" ]
