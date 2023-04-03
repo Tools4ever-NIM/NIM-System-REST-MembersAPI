@@ -968,7 +968,7 @@
                         },
                         "body": {
                             "UpdateAccountInformation": true
-                       },
+                        },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -1075,7 +1075,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{Group}/members"
+                            "path": "/api/groups/{Group}?action=add"
                         },
                         "query_parameters": {
                             "action": "Add"
@@ -1096,7 +1096,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{Group}/members"
+                            "path": "/api/groups/{Group}?action=remove"
                         },
                         "query_parameters": {
                             "action": "remove"
