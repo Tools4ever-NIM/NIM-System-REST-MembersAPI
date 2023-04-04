@@ -99,7 +99,7 @@
                             "path": "/api/Educators"
                         },
                         "processing_options": {
-                            "stringColumnName": "Username"
+                            "stringArrayColumnName": "Username"
                          },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -910,7 +910,7 @@
                             "path": "/api/Students"
                         },
                         "processing_options": {
-                            "stringColumnName": "Username"
+                            "stringArrayColumnName": "Username"
                          },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
