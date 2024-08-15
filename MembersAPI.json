@@ -1206,7 +1206,21 @@
             "test_connection": {
                 "url": "/api/Departments"
             },
-            "accept": "application/json"
+            "accept": "application/json",
+            "retry": [
+                {
+                    "type": "statusCode",
+                    "statusCode": 429,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 12,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "connectionError"
+                }
+            ]
         }
         
     },
