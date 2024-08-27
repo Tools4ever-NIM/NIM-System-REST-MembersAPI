@@ -99,7 +99,7 @@
                             "path": "/api/Educators"
                         },
                         "processing_options": {
-                            "stringColumnName": "Username"
+                            "stringArrayColumnName": "Username"
                          },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -118,6 +118,7 @@
                             "WebmailAccessEnabled",
                             "GSuiteOrganizationName",
                             "GSuiteOrganizationPath",
+							"GSuiteEnabled",
                             "KnowledgeWorkerAssigned",
                             "SchoolAddress",
                             "SchoolCity",
@@ -226,6 +227,7 @@
                     "KnowledgeWorkerAssigned": "boolean",
                     "GSuiteOrganizationName": "string*",
                     "GSuiteOrganizationPath": "string*",
+					"GSuiteEnabled": "boolean",
                     "CreateWebsite": "boolean*",
                     "AudioConferencingAssigned": "boolean*",
                     "Bookings": "boolean*",
@@ -373,7 +375,8 @@
                     "WebmailAccessEnabled": "boolean",
                     "KnowledgeWorkerAssigned": "boolean",
                     "GSuiteOrganizationName": "string*",
-                    "GSuiteOrganizationPath": "string*"
+                    "GSuiteOrganizationPath": "string*",
+					"GSuiteEnabled": "boolean"
                   }
             },
             "GradYear": {
@@ -910,7 +913,7 @@
                             "path": "/api/Students"
                         },
                         "processing_options": {
-                            "stringColumnName": "Username"
+                            "stringArrayColumnName": "Username"
                          },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -929,6 +932,7 @@
                             "WebmailAccessEnabled",
                             "GSuiteOrganizationName",
                             "GSuiteOrganizationPath",
+							"GSuiteEnabled",
                             "KnowledgeWorkerAssigned",
                             "Bookings",
                             "Minecraft",
@@ -1024,6 +1028,7 @@
                     "WebmailAccessEnabled": "boolean",
                     "GSuiteOrganizationName": "string*",
                     "GSuiteOrganizationPath": "string*",
+					"GSuiteEnabled": "boolean",
                     "CreateMailbox": "boolean*",
                     "Bookings": "boolean*",
                     "Minecraft": "boolean*",
@@ -1168,7 +1173,8 @@
                     "OutlookAnywhereAccessEnabled": "boolean",
                     "WebmailAccessEnabled": "boolean",
                     "GSuiteOrganizationName": "string*",
-                    "GSuiteOrganizationPath": "string*"
+                    "GSuiteOrganizationPath": "string*",
+					"GSuiteEnabled": "boolean"
                   }
             },
             "Titles": {
@@ -1196,7 +1202,7 @@
     },
     "rest": {
         "config": {
-            "baseUrl": "{tenant_id}",
+            "baseUrl": "https://{tenant_id}",
             "get": {
                 "query_parameters": {
                 }
@@ -1230,7 +1236,7 @@
                 "name": "tenant_id",
                 "type": "textbox",
                 "label": "Tenent URL:",
-                "value": "https://membersapi.k12.sd.us"
+                "value": "membersapi.k12.sd.us"
             },
             {
                 "name": "school_district",
