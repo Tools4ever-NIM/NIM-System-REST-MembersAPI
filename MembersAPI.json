@@ -416,10 +416,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/api/Groups/DeleteGroup",
-                            "query_parameters": {
-                                "id" : "{Name}"
-                            }
+                            "path": "/api/Groups/DeleteGroup?id={Name}"
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
