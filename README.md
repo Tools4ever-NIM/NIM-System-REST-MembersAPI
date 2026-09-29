@@ -1,4 +1,7 @@
 # Members API for South Dakota State K12
+
+Read the [Members API for South Dakota integration documentation](https://docs.nimsuite.com/en/integrations/members-api-for-south-dakota) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-MembersAPI/assets/24281600/d84ed163-a575-47cd-a748-be0edf2393c8" width="256px" />
 
 
